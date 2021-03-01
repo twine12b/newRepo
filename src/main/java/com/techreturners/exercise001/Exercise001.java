@@ -15,6 +15,7 @@ public class Exercise001 {
     public double addVat(double originalPrice, double vatRate) {
         DecimalFormat df = new DecimalFormat("0.00");
         String withVat = df.format(originalPrice+ (originalPrice * (vatRate/100)));
+
         return Double.parseDouble(withVat);
     }
 
