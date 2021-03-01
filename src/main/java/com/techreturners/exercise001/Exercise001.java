@@ -1,3 +1,8 @@
+/**
+ * @url https://medium.com/cloud-native-the-gathering/how-to-mirror-copy-an-entire-existing-git-repository-into-a-new-one-3bb8faefad9e
+ * After cloning repository. make a copy to your own git account
+ * -- git push --mirror https://gitsite.com/yourusername/new-repository.git --
+ */
 package com.techreturners.exercise001;
 
 import java.text.DecimalFormat;
