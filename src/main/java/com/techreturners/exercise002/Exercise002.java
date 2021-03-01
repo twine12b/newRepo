@@ -2,8 +2,10 @@ package com.techreturners.exercise002;
 
 public class Exercise002 {
 
-    public boolean isFromManchester(/* Person person */) {
-        // Add your code here
+    public boolean isFromManchester(Person p) {
+        if (p.getCity() == "Manchester")
+            return true;
+
         return false;
     }
 
@@ -11,5 +13,5 @@ public class Exercise002 {
         // Add your code here
         return false;
     }
-    
+
 }
