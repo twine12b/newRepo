@@ -7,6 +7,7 @@ package com.techreturners.exercise001;
 
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
@@ -30,7 +31,13 @@ public class Exercise001 {
     }
 
     public int countLinuxUsers(List<User> users) {
-        // Add your code here
-        return 0;
+        AtomicInteger count = new AtomicInteger();
+
+        users.stream().filter(u -> u.getType() == "Linux")
+                .forEach(u -> {
+                    count.getAndIncrement();
+                });
+
+        return count.intValue();
     }
 }
