@@ -2,6 +2,10 @@
  * @url https://medium.com/cloud-native-the-gathering/how-to-mirror-copy-an-entire-existing-git-repository-into-a-new-one-3bb8faefad9e
  * After cloning repository. make a copy to your own git account
  * -- git push --mirror https://gitsite.com/yourusername/new-repository.git --
+ *
+ * -- countLinuxUsers --
+ *   changed == comparison to .equals(?) as per feedback by Ellie
+ *   Simplified lambda expression as per feedback Ellie and Intellij suggestions
  */
 package com.techreturners.exercise001;
 
@@ -33,10 +37,8 @@ public class Exercise001 {
     public int countLinuxUsers(List<User> users) {
         AtomicInteger count = new AtomicInteger();
 
-        users.stream().filter(u -> u.getType() == "Linux")
-                .forEach(u -> {
-                    count.getAndIncrement();
-                });
+        users.stream().filter(u -> u.getType().equals("Linux"))
+                .forEach(u -> count.getAndIncrement());
 
         return count.intValue();
     }
